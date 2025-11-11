@@ -1,0 +1,15 @@
+<div class="todo-input">
+  <input 
+    [(ngModel)]="todoTitle" 
+    placeholder="Enter todo title..." 
+    (keyup.enter)="onSubmit()"
+    class="input-title"
+  />
+  <input 
+    [(ngModel)]="todoDescription" 
+    placeholder="Description (optional)" 
+    (keyup.enter)="onSubmit()"
+    class="input-description"
+  />
+  <button (click)="onSubmit()" class="btn-add">Add Todo</button>
+</div>

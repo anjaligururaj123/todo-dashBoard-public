@@ -1,0 +1,32 @@
+<div class="app-container" [ngClass]="(layout$ | async)">
+  <header class="app-header">
+    <h1>📝 Todo Dashboard</h1>
+    <div class="controls">
+      <button (click)="toggleTheme()" class="btn-theme">
+        🌓 {{ (theme$ | async) === 'light' ? 'Dark' : 'Light' }} Mode
+      </button>
+      <button (click)="setLayout('compact')" class="btn-layout">📦 Compact</button>
+      <button (click)="setLayout('comfortable')" class="btn-layout">📋 Comfortable</button>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <app-todo-input (addTodo)="onAddTodo($event)"></app-todo-input>
+    
+    <app-todo-filter (filterChange)="onFilterChange($event)"></app-todo-filter>
+
+    <div class="todo-list">
+      <div *ngIf="filteredTodos.length === 0" class="empty-state">
+        <p>No todos found. Add one above! 🎯</p>
+      </div>
+      
+      <app-todo-item 
+        *ngFor="let todo of filteredTodos"
+        [todo]="todo"
+        (toggle)="onToggleTodo($event)"
+        (update)="onUpdateTodo($event)"
+        (delete)="onDeleteTodo($event)"
+      ></app-todo-item>
+    </div>
+  </main>
+</div>

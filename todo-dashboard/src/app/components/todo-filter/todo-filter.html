@@ -1,0 +1,25 @@
+<div class="filter-container">
+  <div class="filter-buttons">
+    <button 
+      [class.active]="activeFilter === 'all'" 
+      (click)="setFilter('all')"
+      class="filter-btn"
+    >
+      All
+    </button>
+    <button 
+      [class.active]="activeFilter === 'active'" 
+      (click)="setFilter('active')"
+      class="filter-btn"
+    >
+      Active
+    </button>
+    <button 
+      [class.active]="activeFilter === 'completed'" 
+      (click)="setFilter('completed')"
+      class="filter-btn"
+    >
+      Completed
+    </button>
+  </div>
+</div>

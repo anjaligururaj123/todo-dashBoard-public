@@ -1,0 +1,76 @@
+.app-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+body.dark .app-header {
+  border-bottom-color: #444;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-theme,
+.btn-layout {
+  padding: 10px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.btn-theme:hover,
+.btn-layout:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.app-main {
+  margin-top: 20px;
+}
+
+.todo-list {
+  margin-top: 20px;
+}
+
+.compact .todo-list {
+  gap: 5px;
+}
+
+.comfortable .todo-list {
+  gap: 15px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+  font-size: 18px;
+}
+
+body.dark .empty-state {
+  color: #666;
+}

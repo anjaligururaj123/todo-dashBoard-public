@@ -1,0 +1,37 @@
+<div class="todo-item" [class.completed]="todo.completed">
+  <input 
+    type="checkbox" 
+    [checked]="todo.completed" 
+    (change)="onToggle()"
+    class="todo-checkbox"
+  />
+  
+  <div class="todo-content" *ngIf="!isEditing">
+    <div class="todo-title">{{ todo.title }}</div>
+    <div class="todo-description" *ngIf="todo.description">{{ todo.description }}</div>
+  </div>
+
+  <div class="todo-edit" *ngIf="isEditing">
+    <input 
+      [(ngModel)]="editTitle" 
+      (keyup.enter)="saveEdit()"
+      (keyup.escape)="cancelEdit()"
+      placeholder="Title"
+      class="edit-input"
+    />
+    <input 
+      [(ngModel)]="editDescription" 
+      (keyup.enter)="saveEdit()"
+      (keyup.escape)="cancelEdit()"
+      placeholder="Description"
+      class="edit-input"
+    />
+  </div>
+
+  <div class="actions">
+    <button *ngIf="!isEditing" (click)="startEdit()" class="btn-edit">Edit</button>
+    <button *ngIf="isEditing" (click)="saveEdit()" class="btn-save">Save</button>
+    <button *ngIf="isEditing" (click)="cancelEdit()" class="btn-cancel">Cancel</button>
+    <button (click)="onDelete()" class="btn-delete">Delete</button>
+  </div>
+</div>
