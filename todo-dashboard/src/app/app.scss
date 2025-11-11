@@ -56,12 +56,34 @@ body.dark .app-header {
   margin-top: 20px;
 }
 
-.compact .todo-list {
+/* COMPACT LAYOUT */
+.app-container.compact .todo-list {
   gap: 5px;
 }
 
-.comfortable .todo-list {
+.app-container.compact app-todo-item {
+  font-size: 14px;
+}
+
+.app-container.compact .todo-input {
+  padding: 10px;
+}
+
+.app-container.compact .app-header h1 {
+  font-size: 24px;
+}
+
+/* COMFORTABLE LAYOUT (Default) */
+.app-container.comfortable .todo-list {
   gap: 15px;
+}
+
+.app-container.comfortable app-todo-item {
+  font-size: 16px;
+}
+
+.app-container.comfortable .todo-input {
+  padding: 20px;
 }
 
 .empty-state {
